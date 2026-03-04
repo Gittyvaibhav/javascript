@@ -23,3 +23,12 @@ let person = {
 console.log(person)
 person.name = "John";
 console.log(person)
+
+
+//Object is a collection of key-value pairs, where the keys are strings and the values can be of any data type. We can access the values of an object using dot notation or bracket notation.
+const student = {
+    name: "Vaibhav",
+    age: 25,
+    cgpi: 7.27
+};
+console.log(student);
