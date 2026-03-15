@@ -1,19 +1,16 @@
-// Primitive data types in JavaScript and non-primitive data types in JavaScript.
+// JavaScript data types are divided into primitive and non-primitive types.
+// Primitive types: string, number, boolean, null, undefined, symbol, bigint.
+// Non-primitive types: object, array, function.
 
-// Primitive data types in JavaScript are: string, number, boolean,
-// null, undefined, symbol, and bigint.
-// Non-primitive data types in JavaScript are: object, array, and function.
-
-// Primitive data types are immutable, which means their values cannot
-// be changed after they are created. When we assign a new value,
-// the variable now stores that new value.
+// Primitive values are immutable. When you assign a new value to a variable,
+// it starts holding the new value (the old value does not change).
 let name = "Vaibhav";
 console.log(name);
 name = "John";
 console.log(name);
 
-// Non-primitive data types are mutable, which means their values
-// can be changed after they are created.
+// Non-primitive values are mutable. You can change the contents of an object
+// without reassigning the variable that refers to it.
 let person = {
     name: "Vaibhav",
     age: 25
@@ -23,8 +20,7 @@ person.name = "John";
 console.log(person);
 
 // An object is a collection of key-value pairs.
-// The keys are strings, and the values can be of any data type.
-// We can access object values using dot notation or bracket notation.
+// Keys are strings, and values can be any valid JavaScript type.
 const student = {
     name: "Vaibhav",
     age: 25,
@@ -32,8 +28,8 @@ const student = {
 };
 console.log(student);
 
-// Object keys can be updated, and new keys can also be added.
-// But the object itself cannot be reassigned to a new value here.
+// Object properties can be updated and new properties can be added.
+// However, a `const` object variable cannot be reassigned to a different object.
 student.name = "John";
 student.cgpi = "A";
 console.log(student);

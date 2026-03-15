@@ -1,3 +1,5 @@
+// These objects show how JavaScript can represent structured data
+// using key-value pairs.
 const product = {
     name: "Ball Pen (Black)",
     price: "Rs. 270",

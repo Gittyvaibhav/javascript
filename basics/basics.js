@@ -1,2 +1,4 @@
-console.log("Hello, World!"); // We can use double quotes for strings.
-console.log('Hello, World!'); // We can also use single quotes for strings.
+// `console.log` prints text to the console.
+// JavaScript strings can be written using double quotes or single quotes.
+console.log("Hello, World!"); // double quotes
+console.log('Hello, World!'); // single quotes
