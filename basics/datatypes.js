@@ -34,5 +34,5 @@ const student = {
 console.log(student);
 //object keys can be updated and new keys can be added to the object, but we cannot re-assign the object itself to a new value.
 student.name = "John";
-student.grade = "A";
+student.cgpi = "A";
 console.log(student)
