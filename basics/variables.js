@@ -1,22 +1,20 @@
-// variables are used to store data in JavaScript. We can declare a variable using the var, let, or const keyword.
+// Variables are used to store data in JavaScript.
+// A variable can be declared using `var`, `let`, or `const`.
 fullName = "Vaibhav";
-console.log(fullName)
+console.log(fullName);
 
-
-
-// js is dynamically typed language, which means we can change the type of a variable at runtime.
+// JavaScript is a dynamically typed language, so the type of a variable
+// can be changed while the program is running.
 fullName = 123;
-console.log(fullName)
+console.log(fullName);
 
+// JavaScript is also loosely typed, so it can perform operations
+// without strict type checking.
+console.log(fullName + " is a number"); // The number is converted to a string.
 
+// JavaScript can also perform arithmetic operations and convert values
+// when possible.
+console.log(fullName * 2); // Here the value is treated as a number.
 
-//js is a loosely typed language, which means we can perform operations on variables without worrying about their types.
-console.log(fullName + " is a number")// we can concatenate a string and a number in JavaScript, and it will convert the number to a string before concatenating.
-
-
-// we can also perform arithmetic operations on variables, and JavaScript will convert the string to a number if possible.
-console.log(fullName * 2) // we can multiply a number and a string in JavaScript, and it will convert the string to a number before multiplying. If the string cannot be converted to a number, it will return NaN (Not a Number).
-
-
-
-// js is a case-sensitive language, which means that fullName and fullname are two different variables.
+// JavaScript is case-sensitive, so `fullName` and `fullname`
+// are treated as different variables.

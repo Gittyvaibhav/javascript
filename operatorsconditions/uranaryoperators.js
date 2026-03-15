@@ -1,21 +1,22 @@
-//uranary operators are those that operate on a single operand. They can be used to perform various operations such as incrementing, decrementing, negating, and more. Here are some common unary operators in JavaScript:
+// Unary operators are operators that work with only one operand.
+// In these examples, the increment operator is used to show the difference
+// between postfix and prefix behavior.
 
-//1. pre Increment operator (++)
+// let x = 5;
+// console.log(++x); // 6 (increment first, then print)
+
+// let y = 5;
+// console.log(y++); // 5 (print first, then increment)
+
 let x = 5;
-++x; // x is now 6
-console.log(x)
 
-//2. pre Decrement operator (--)
-let y = 10;
---y; // y is now 9
-console.log(y)
+let y = x++ + ++x;
 
-//3. post Increment operator (++)
-let a = 3;
-a++; // a is now 4
-console.log(a)
+console.log(x); // 7
+console.log(y); // 12
 
-//4. post Decrement operator (--)
-let b = 10;
-b--; // b is now 9
-console.log(b)
+x = 5;
+console.log(x++); // 5
+
+x = 5;
+console.log(++x); // 6

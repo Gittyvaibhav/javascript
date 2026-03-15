@@ -1,38 +1,39 @@
-//primitive data types in JavaScript and non primitive data types in JavaScript
+// Primitive data types in JavaScript and non-primitive data types in JavaScript.
 
-// primitive data types in JavaScript are: string, number, boolean, null, undefined, symbol, and bigint.
-// non primitive data types in JavaScript are: object, array, and function.
+// Primitive data types in JavaScript are: string, number, boolean,
+// null, undefined, symbol, and bigint.
+// Non-primitive data types in JavaScript are: object, array, and function.
 
-
-
-
-
-// primitive data types are immutable, which means that their values cannot be changed after they are created. When we assign a new value to a primitive variable, it creates a new variable in memory and assigns the new value to it.
+// Primitive data types are immutable, which means their values cannot
+// be changed after they are created. When we assign a new value,
+// the variable now stores that new value.
 let name = "Vaibhav";
-console.log(name)
+console.log(name);
 name = "John";
-console.log(name)
+console.log(name);
 
-
-
-// non primitive data types are mutable, which means that their values can be changed after they are created. When we assign a new value to a non primitive variable, it does not create a new variable in memory, but instead changes the value of the existing variable.
+// Non-primitive data types are mutable, which means their values
+// can be changed after they are created.
 let person = {
-    name: "Vaibhav",    
+    name: "Vaibhav",
     age: 25
-}
-console.log(person)
+};
+console.log(person);
 person.name = "John";
-console.log(person)
+console.log(person);
 
-
-//Object is a collection of key-value pairs, where the keys are strings and the values can be of any data type. We can access the values of an object using dot notation or bracket notation.
+// An object is a collection of key-value pairs.
+// The keys are strings, and the values can be of any data type.
+// We can access object values using dot notation or bracket notation.
 const student = {
     name: "Vaibhav",
     age: 25,
     cgpi: 7.27
 };
 console.log(student);
-//object keys can be updated and new keys can be added to the object, but we cannot re-assign the object itself to a new value.
+
+// Object keys can be updated, and new keys can also be added.
+// But the object itself cannot be reassigned to a new value here.
 student.name = "John";
 student.cgpi = "A";
-console.log(student)
+console.log(student);

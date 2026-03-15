@@ -4,10 +4,9 @@ const product = {
     inStock: true,
     ratings: 4.5,
     offer: "20% off"
-
 };
 
-const profile={
+const profile = {
     username: "vaibhav_123",
     name: "Vaibhav",
     posts: 100,
@@ -15,4 +14,4 @@ const profile={
     following: 500,
     isVerified: true,
     about: "I am a software developer."
-}
+};
