@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--
+        DOM = Document Object Model
+        The browser converts HTML into objects so JavaScript can read,
+        change, add, or remove elements from the page.
+    -->
+
+    <div class="container">
+        <h1 id="main-heading">Learning DOM in JavaScript</h1>
+
+        <p id="description">
+            DOM helps JavaScript interact with HTML and CSS.
+        </p>
+
+        <p class="message">
+            Click the buttons below to see DOM manipulation in action.
+        </p>
+
+        <div class="button-group">
+            <button id="change-text-btn">Change Text</button>
+            <button id="change-color-btn">Change Color</button>
+            <button id="add-item-btn">Add List Item</button>
+            <button id="show-children-btn">Show First/Last Child</button>
+            <button id="attribute-btn">Get/Set Attribute</button>
+        </div>
+
+        <a id="learning-link" href="https://developer.mozilla.org/" target="_blank">
+            Open DOM learning reference
+        </a>
+
+        <h2>Topics</h2>
+        <ul id="topic-list">
+            <li>Selecting elements</li>
+            <li>Changing text</li>
+            <li>Changing styles</li>
+            <li>Handling events</li>
+        </ul>
+
+        <p id="child-output" class="output-box">
+            Click "Show First/Last Child" to learn about child nodes.
+        </p>
+
+        <p id="attribute-output" class="output-box">
+            Click "Get/Set Attribute" to learn about attributes.
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
