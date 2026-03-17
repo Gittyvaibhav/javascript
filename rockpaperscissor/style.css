@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Exo+2:wght@400;600&display=swap');
+
+:root {
+  --bg: #0a0a12;
+  --surface: #12121f;
+  --card: #1a1a2e;
+  --border: #2a2a4a;
+  --neon-blue: #00d4ff;
+  --neon-pink: #ff2d78;
+  --neon-green: #00ff9d;
+  --text: #e8e8ff;
+  --muted: #6868aa;
+  --glow-blue: 0 0 12px #00d4ff88, 0 0 30px #00d4ff33;
+  --glow-pink: 0 0 12px #ff2d7888, 0 0 30px #ff2d7833;
+  --glow-green: 0 0 12px #00ff9d88, 0 0 30px #00ff9d33;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, #0d0d2b 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, #1a0a2e 0%, transparent 50%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.015) 40px,
+      rgba(255,255,255,0.015) 41px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.015) 40px,
+      rgba(255,255,255,0.015) 41px
+    );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  font-family: 'Exo 2', sans-serif;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(1rem, 3vw, 1.6rem);
+  text-align: center;
+  color: var(--neon-blue);
+  text-shadow: var(--glow-blue);
+  letter-spacing: 0.05em;
+  margin-bottom: 3rem;
+  animation: flicker 4s infinite;
+}
+
+@keyframes flicker {
+  0%, 95%, 100% { opacity: 1; }
+  96% { opacity: 0.7; }
+  97% { opacity: 1; }
+  98% { opacity: 0.5; }
+  99% { opacity: 0.9; }
+}
+
+/* --- Choices Row --- */
+.choices {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.choice {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.choice::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.06), transparent 70%);
+  pointer-events: none;
+}
+
+.choice img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
+  transition: transform 0.2s ease, filter 0.2s ease;
+  pointer-events: none;
+}
+
+.choice:hover {
+  transform: translateY(-6px) scale(1.05);
+}
+
+#rock:hover {
+  border-color: var(--neon-pink);
+  box-shadow: var(--glow-pink);
+}
+#rock:hover img {
+  filter: drop-shadow(0 0 10px var(--neon-pink));
+}
+
+#paper:hover {
+  border-color: var(--neon-blue);
+  box-shadow: var(--glow-blue);
+}
+#paper:hover img {
+  filter: drop-shadow(0 0 10px var(--neon-blue));
+}
+
+#scissors:hover {
+  border-color: var(--neon-green);
+  box-shadow: var(--glow-green);
+}
+#scissors:hover img {
+  filter: drop-shadow(0 0 10px var(--neon-green));
+}
+
+.choice:active {
+  transform: scale(0.95);
+}
+
+/* --- Score Board --- */
+.score-board {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.score-board::before {
+  content: 'SCORE';
+  position: absolute;
+  top: -0.65rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5rem;
+  background: var(--surface);
+  color: var(--muted);
+  padding: 0 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.score p:first-child {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2.5rem;
+  color: var(--neon-blue);
+  text-shadow: var(--glow-blue);
+  line-height: 1;
+}
+
+.score p:last-child {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+}
+
+/* --- Message Container --- */
+.msg-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 2.5rem;
+  text-align: center;
+  min-width: 280px;
+}
+
+#msg {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Win/lose/draw state classes — apply via JS */
+#msg.win {
+  color: var(--neon-green);
+  text-shadow: var(--glow-green);
+}
+#msg.lose {
+  color: var(--neon-pink);
+  text-shadow: var(--glow-pink);
+}
+#msg.draw {
+  color: var(--neon-blue);
+  text-shadow: var(--glow-blue);
+}
+
+/* --- Choice selected pulse --- */
+@keyframes pulse-select {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.choice.selected {
+  animation: pulse-select 0.35s ease;
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  .choice {
+    width: 100px;
+    height: 100px;
+  }
+  .choice img {
+    width: 55px;
+    height: 55px;
+  }
+  .choices {
+    gap: 1rem;
+  }
+  .score-board {
+    gap: 2rem;
+    padding: 1.2rem 1.8rem;
+  }
+  .score p:first-child {
+    font-size: 2rem;
+  }
+}
