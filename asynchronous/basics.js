@@ -42,4 +42,4 @@ function processData(data, callback) {
         callback(processedData);
     }, 2000);
 }
-
+// we make promises to avoid callback hell
