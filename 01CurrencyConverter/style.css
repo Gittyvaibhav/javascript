@@ -1,176 +1,110 @@
-*, *::before, *::after {
-  box-sizing: border-box;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;600&display=swap');
-
-:root {
-  --bg:        #0d0d0d;
-  --surface:   #161616;
-  --border:    #2a2a2a;
-  --muted:     #3d3d3d;
-  --text:      #e8e8e8;
-  --subtle:    #888;
-  --accent:    #c8f542;
-  --accent-dim:#8aaa20;
-  --radius:    6px;
-}
-
+/* Body */
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Syne', sans-serif;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 1.5rem;
-}
-
-.Currency-converter {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 2rem;
-  width: 100%;
-  max-width: 420px;
-}
-
-h1 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.75rem;
-}
-
-form {
+  background: #0f172a; /* deep dark blue */
+  color: #e2e8f0;
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-p {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--subtle);
-  margin-bottom: 0.4rem;
+/* Container */
+.Currency-converter {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
 
-/* Amount */
+/* Title */
+.Currency-converter h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Input section */
+.amount p,
+.from p,
+.To p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
 .amount input {
   width: 100%;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  color: var(--text);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.4rem;
-  padding: 0.55rem 0.75rem;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
   outline: none;
-  transition: border-color 0.15s;
+  background: #334155;
+  color: white;
 }
 
-.amount input:focus {
-  border-color: var(--accent);
-}
-
-/* Dropdowns row */
+/* Dropdown layout */
 .dropdown {
+  margin: 15px 0;
   display: flex;
-  align-items: flex-end;
-  gap: 0.75rem;
-}
-
-.from, .To {
-  flex: 1;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .select-container {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.4rem 0.6rem;
-  transition: border-color 0.15s;
-}
-
-.select-container:focus-within {
-  border-color: var(--accent);
+  gap: 8px;
+  background: #334155;
+  padding: 5px;
+  border-radius: 6px;
 }
 
 .select-container img {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
+  width: 25px;
 }
 
-.select-container select {
-  flex: 1;
+select {
   background: transparent;
   border: none;
-  color: var(--text);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.85rem;
+  color: white;
   outline: none;
-  cursor: pointer;
-  appearance: none;
 }
 
-/* Swap icon */
-.fa-solid.fa-arrow-right-arrow-left {
-  color: var(--muted);
-  font-size: 0.85rem;
-  padding-bottom: 0.75rem;
-  flex-shrink: 0;
-  transition: color 0.15s;
-  cursor: pointer;
+/* Icon */
+.dropdown i {
+  color: #94a3b8;
+  font-size: 18px;
 }
 
-.fa-solid.fa-arrow-right-arrow-left:hover {
-  color: var(--accent);
-}
-
-/* Rate message */
+/* Message */
 .msg {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8rem;
-  color: var(--subtle);
+  margin: 15px 0;
   text-align: center;
-  padding: 0.6rem 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  letter-spacing: 0.04em;
+  font-size: 14px;
+  color: #38bdf8;
 }
 
 /* Button */
 button {
-  background: var(--accent);
-  color: #0d0d0d;
+  width: 100%;
+  padding: 10px;
   border: none;
-  border-radius: var(--radius);
-  font-family: 'Syne', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.75rem;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
+  transition: 0.2s ease;
 }
 
 button:hover {
-  background: #d8ff55;
-}
-
-button:active {
-  transform: scale(0.98);
+  background: #2563eb;
 }
